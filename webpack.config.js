@@ -8,7 +8,8 @@ const PORT = 8080
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
   },
   stats: 'minimal',
   devServer: {
