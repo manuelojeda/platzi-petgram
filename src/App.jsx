@@ -10,10 +10,8 @@ import { Favs } from './pages/Favs.jsx'
 import { User } from './pages/User.jsx'
 import { NotRegisteredUser } from './pages/NotRegisteredUser.jsx'
 import { Router, Link } from '@reach/router'
+import Context from './Context.jsx'
 
-const UserLogged = ({ children }) => {
-  return children({ isAuth: false })
-}
 export const App = () => {
   return (
     <div>
@@ -27,7 +25,7 @@ export const App = () => {
         <Details path='/detail/:id' />
       </Router>
 
-      <UserLogged>
+      <Context.Consumer>
         {
           ({ isAuth }) =>
             isAuth
@@ -40,7 +38,7 @@ export const App = () => {
                 <NotRegisteredUser path='/user' />
               </Router>
         }
-      </UserLogged>
+      </Context.Consumer>
       <NavBar />
     </div>
   )

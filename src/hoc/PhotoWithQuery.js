@@ -8,7 +8,7 @@ query getSinglePhoto($id:ID!) {
     src
     likes
     userId
-    likes
+    liked
   }
 }
 `
