@@ -13,5 +13,18 @@
       This app need JavaScript to works properly
     </h3>
   </noscript>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('SW registrado')
+          })
+          .catch((error) => {
+            console.error(error.response)
+          })
+      })
+    }
+  </script>
 </body>
 </html>
