@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Layout } from '../components/Layout/index.jsx'
 import { Context } from '../Context.jsx'
 import { RegisterMutation } from '../container/RegisterMutation.jsx'
 import { LoginMutation } from '../container/LoginMutation.jsx'
@@ -8,7 +9,7 @@ export const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context)
 
   return (
-    <>
+    <Layout title='Registration' subtitle='Use the Signup form in case your want to join us, otherwise use Signin to login'>
       <RegisterMutation>
         {
           (register, { data, loading, error }) => {
@@ -25,7 +26,7 @@ export const NotRegisteredUser = () => {
             const errorMsg = error && 'El usuario ya existe o hay algún problema.'
 
             return (
-              <UserForm disabled={loading} error={errorMsg} title='Registrarse' onSubmit={onSubmit} />
+              <UserForm disabled={loading} error={errorMsg} title='Sign Up' onSubmit={onSubmit} />
             )
           }
         }
@@ -45,10 +46,10 @@ export const NotRegisteredUser = () => {
 
             const errorMsg = error && 'La contraseña no es correcta o el usuario no existe'
 
-            return <UserForm disabled={loading} error={errorMsg} title='Iniciar sesión' onSubmit={onSubmit} />
+            return <UserForm disabled={loading} error={errorMsg} title='Sign In' onSubmit={onSubmit} />
           }
         }
       </LoginMutation>
-    </>
+    </Layout>
   )
 }

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
-import { Wrapper } from './styles'
+import { Layout } from '../components/Layout/index.jsx'
 import { Context } from '../Context.jsx'
 import { Button } from '../components/UserForm/styles'
 
 export const User = () => {
   const { removeAuth } = useContext(Context)
   return (
-    <Wrapper>
+    <Layout title='Petgram - User settings' subtitle='Your petgram settings'>
       <h1>User</h1>
       <Button onClick={removeAuth}>Logout</Button>
-    </Wrapper>
+    </Layout>
   )
 }
