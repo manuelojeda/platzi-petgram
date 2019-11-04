@@ -3,7 +3,7 @@ import { Layout } from '../components/Layout/index.jsx'
 import { Context } from '../Context.jsx'
 import { Button } from '../components/UserForm/styles'
 
-export const User = () => {
+export default () => {
   const { removeAuth } = useContext(Context)
   return (
     <Layout title='Petgram - User settings' subtitle='Your petgram settings'>
